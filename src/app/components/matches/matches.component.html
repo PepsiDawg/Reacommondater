@@ -1,0 +1,49 @@
+<div class="component-container">
+  <h1 class="title">Matches</h1>
+  <hr />
+  <table class="table table-striped table-hover" *ngIf="matches.length > 0">
+    <thead>
+      <th class="text-center">Match</th>
+      <th class="text-center">Map</th>
+      <th class="text-center">Outcome</th>
+      <th class="text-center">SR</th>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let match of matches; let i = index"
+        class="text-center">
+        <td>{{i + 1}}</td>
+        <td>{{match.map}}</td>
+        <td>{{match.outcome}}</td>
+        <td>{{match.sr}}</td>
+        <td>
+          <i class="fa {{getClasses('leaver', match.modifiers.leaver)}}"></i>
+          <i class="fa {{getClasses('heated', match.modifiers.heated)}}"></i>
+          <i class="fa {{getClasses('communication', match.modifiers.communication)}}"></i>
+        </td>
+        <td>
+          <i 
+            *ngFor="let player of match.group; let i = index"
+            class="fa fa-user player" 
+            aria-hidden="true"
+            title="{{match.group}}"
+            [class.even]="i % 2 == 0"
+            [class.odd]="i % 2 == 1"></i>
+        </td>
+        <td>
+          <i 
+            (click)="editMatch(i)"
+            class="text-info fa fa-pencil-square-o icon-btn" 
+            aria-hidden="true"></i>
+        </td>
+        <td>
+          <i
+            (click)="deleteMatch(i)" 
+            class="text-primary fa fa-minus-circle icon-btn" 
+            aria-hidden="true"></i>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="text-center text-no-matches" *ngIf="matches.length <= 0">No matches recorded!</div>
+</div>

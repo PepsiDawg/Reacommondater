@@ -1,0 +1,26 @@
+.content {
+    margin-left: 50px;
+}
+
+.account-name {
+    float: left;
+}
+
+.edit-title {
+    color: #666;
+    font-size: 1em;
+    margin: 5px;
+}
+
+.name-input, .season-input {
+    width: 33%;
+    float: left;
+}
+
+.name-container > button {
+    float: left;
+}
+
+.btn-edit {
+    margin-left: 10px;
+}

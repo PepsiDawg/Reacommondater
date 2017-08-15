@@ -1,0 +1,24 @@
+<div (click)="toggleState()" class="header">
+  Heroes
+  <i 
+    *ngIf="!dropdown"
+    class="fa fa-chevron-down"></i>
+  <i 
+    *ngIf="dropdown"
+    class="fa fa-chevron-up"></i>
+</div>
+<div
+  [@heroState]='state'
+  class="dropdown-content">
+  <div class="hero-bar" *ngFor="let hero of heroData; let i = index">
+    <img class="hero-img" src="{{hero.img}}" />
+    <div class="time-container">
+      <div 
+        class="playtime-bar" 
+        [style.background-color]="heroColors[hero.hero.toLowerCase()]"
+        [style.width]="((hero.hours / maxHours) * 100) + '%'"></div>
+      <div class="hero-time">{{hero.played}}</div>
+      <div class="hero-name">{{hero.hero}}</div>
+    </div>
+  </div>
+</div>

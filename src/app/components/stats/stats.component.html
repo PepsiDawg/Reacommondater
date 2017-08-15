@@ -1,0 +1,40 @@
+<div class="component-container">
+    <h1 class="title">Stats</h1>
+    <hr />
+    <div *ngIf="!loading && hasProfile">
+        <div class="header">
+            <div class="header-title">{{owProfile.username}}</div>
+            <div class="header-subtext">{{owProfile.rank}} SR</div>
+        </div>
+
+        <div class="games-container">
+            <div class="game-title">Win / Draw / Loss</div>
+            <div class="game-subtitle">{{owProfile.gameRecord.played}} games played</div>
+            <div 
+                class="game-bar-segment game-win"
+                [style.width]="winPercent">
+                {{owProfile.gameRecord.won}}
+            </div>
+            <div 
+                class="game-bar-segment game-draw"
+                [style.width]="drawPercent">
+                {{owProfile.gameRecord.draw}}
+            </div>
+            <div 
+                class="game-bar-segment game-lost"
+                [style.width]="losePercent">
+                {{owProfile.gameRecord.lost}}
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="heroes">
+            <app-heroes [heroData]="owStats.heroes"></app-heroes>
+        </div>
+        <div class="stats">
+            <app-cards [stats]="owStats.categories"></app-cards>
+        </div>
+    </div>
+    <div *ngIf="!hasProfile" class="add-profile">
+        Add an overwatch account to view stats!
+    </div>
+</div>

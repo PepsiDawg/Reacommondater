@@ -1,0 +1,49 @@
+<div class="component-container">
+  <h1 class="title">Account Settings</h1>
+  <hr/>
+  <div *ngIf="!loading" class="content">
+    <div class="edit-title">Account Name</div>
+    <div class="form-group">
+        <input 
+          #accountNameInput
+          class="form-control name-input"
+          [disabled] = "!edit.overwatch_account"
+          value="{{profile.accountName}}" 
+          placeholder="myAccount#1234">
+        <button 
+          *ngIf="!edit.overwatch_account" 
+          class="btn btn-info btn-edit"
+          (click)="edit.overwatch_account = true">Edit</button>
+        <button 
+          *ngIf="edit.overwatch_account" 
+          class="btn btn-info btn-edit"
+          (click)="saveAccountName(accountNameInput.value)">Save</button>
+        <button 
+          *ngIf="edit.overwatch_account" 
+          class="btn btn-info btn-edit"
+          (click)="edit.overwatch_account = false; accountNameInput.value = profile.accountName">Cancel</button>
+    </div>
+
+    <div class="edit-title">Current Season</div>
+    <div class="form-group">
+        <input 
+          #currentSeasonInput
+          class="form-control season-input"
+          [disabled] = "!edit.current_season"
+          value="{{currentSeason}}" 
+          type="number">
+        <button 
+          *ngIf="!edit.current_season" 
+          class="btn btn-info btn-edit"
+          (click)="edit.current_season = true">Edit</button>
+        <button 
+          *ngIf="edit.current_season" 
+          class="btn btn-info btn-edit"
+          (click)="saveCurrentSeason(currentSeasonInput.value)">Save</button>
+        <button 
+          *ngIf="edit.current_season" 
+          class="btn btn-info btn-edit"
+          (click)="edit.current_season = false; currentSeasonInput.value = currentSeason">Cancel</button>
+    </div>
+  </div>
+</div>

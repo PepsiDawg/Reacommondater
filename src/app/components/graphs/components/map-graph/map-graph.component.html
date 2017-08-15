@@ -1,0 +1,31 @@
+<div class="map-container">
+  <h1>Map Statistics</h1>
+  <div class="map-dropdown">
+    <app-dropdown 
+      [options]="mapOptions"
+      (selected)="selectMap($event)"></app-dropdown>
+  </div>
+  <div class="graph-container" *ngIf="!loading">
+    <div *ngIf="selectedGraph == 'All'">
+      <h4 class="win-percentage">Win Rate: {{winPercent}}%</h4>
+      <canvas baseChart
+        [datasets]="graph.All.datasets"
+        [labels]="graph.All.labels"
+        [colors]="graph.All.colors"
+        [options]="graph.All.options"
+        [legend]="true"
+        [chartType]="graph.All.type"></canvas>
+    </div>
+    <div *ngIf="selectedGraph != 'All'" class="map-graph-container">
+      <h4 class="win-percentage">Win Rate: {{graph.maps[selectedGraph].winPercentage}}%</h4>
+      <div class="map-graph"> 
+        <canvas baseChart
+          [data]="graph.maps[selectedGraph].data"
+          [labels]="graph.maps[selectedGraph].labels"
+          [colors]="graph.maps[selectedGraph].colors"
+          [legend]="true"
+          [chartType]="graph.maps[selectedGraph].type"></canvas>
+      </div>
+    </div>
+  </div>
+</div>

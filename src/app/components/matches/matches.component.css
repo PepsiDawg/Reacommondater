@@ -1,0 +1,21 @@
+.player {
+    margin-left: -5px;
+}
+
+.even {
+    color: #3dafed;
+}
+
+.odd {
+    color: #666;
+}
+
+.icon-btn {
+    cursor: pointer;
+}
+
+table, .text-no-matches {
+    margin-top: 25px;
+    color: #666;
+    width: 100%;
+}

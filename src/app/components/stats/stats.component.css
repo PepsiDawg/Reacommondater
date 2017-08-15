@@ -1,0 +1,73 @@
+.header {
+    text-align: center;
+}
+
+.header-title {
+    font-size: 3em;
+    color: #666;
+}
+
+.header-subtext {
+    font-size: 1.5em;
+    color: #aaa;
+    margin-top: -5px;
+}
+
+.games-container {
+    height: 50px;
+    margin-top: 75px;
+    text-align: center;
+    padding: 0px 50px;
+}
+
+.game-title {
+    color: #666;
+    font-size: 1.5em;
+}
+
+.game-subtitle {
+    color: #aaa;
+    font-size: 1em;
+    margin-bottom: 15px;
+}
+
+.game-bar-segment {
+    box-sizing: border-box;
+    float: left;
+    text-align: center;
+    margin: 0;
+    padding: auto 0;
+    line-height: 50px;
+    color: #666;
+    height: 100%;
+}
+
+.game-win {
+    background-color: #c1ffb2;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+
+.game-draw {
+    background-color: #fdffb2;
+}
+
+.game-lost {
+    background-color: #ffb2b2;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.add-profile {
+    text-align: center;
+    color: #666;
+}
+
+.heroes {
+    margin-top: 100px;
+}
+
+.stats {
+    margin-top: 15px;
+    margin-bottom: 150px;
+}

@@ -1,0 +1,31 @@
+.container {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+}
+
+.nav-container {
+    padding: 0;
+    position: fixed;
+    left: 25%;
+    transform: translateX(-100%);
+}
+
+.content {
+    background-color: #fafafa;
+    min-height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+div.col-md-3 {
+    padding: 0;
+}
+
+@media(max-width: 780px) {
+    .nav-container {
+        left: 0;
+        transform: none;
+        position: relative;
+    }
+}

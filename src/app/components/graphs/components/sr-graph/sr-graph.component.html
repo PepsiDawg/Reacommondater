@@ -1,0 +1,16 @@
+ <div class="graph-container">
+  <h1>Skill Ranking</h1>
+  <canvas baseChart *ngIf="!loading"
+    [chartType]="graph.type"
+    [datasets]="graph.SRData"
+    [labels]="graph.labels"
+    [colors]="graph.color"
+    [options]="graph.options"
+    [legend]="true"
+    (mousedown)="mouseDown($event)"
+    (mouseup)="mouseUp($event)"
+    (mouseleave)="mouseLeave($event)"
+    (mousemove)="mouseMove($event)"
+    (wheel)="wheelEvent($event)"></canvas>
+  <div class="sub-graph" *ngIf="!loading">Viewing matches {{graph.controls.bounds.lower + 1}} to {{graph.controls.bounds.upper}} of {{matches.length}}</div>
+</div>

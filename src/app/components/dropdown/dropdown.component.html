@@ -1,0 +1,11 @@
+<div class="dropdown-container">
+  <div class="selection-box" (click)="toggleSelectItem()">{{current}}</div>
+  <div class="options-box" [@dropdownState]="state">
+    <ul>
+      <li class="option" *ngFor="let option of options" (click)="select(option)">
+        {{option}}
+      </li>
+    </ul>
+    <div class="spacer"></div>
+  </div>
+</div>

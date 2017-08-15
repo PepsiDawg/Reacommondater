@@ -1,0 +1,51 @@
+.nav-container {
+    float: right;
+    margin-top: 100px;
+}
+
+.nav-container > ul {
+    border-right: 5px solid rgb(233, 84, 32);
+}
+
+.user-hello {
+    text-align: right;
+    font-size: .95em;
+    padding: 10px;
+    color: #666;
+}
+
+.season {
+    margin-top: -15px;
+}
+
+.nav > li {
+    width: 200px;
+    height: 50px;
+    padding: 10px;
+    margin: 0;
+    text-align: right;
+    color: #666;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.nav > li.bg-primary {
+    color: white;
+}
+
+.nav > li:not(.bg-primary):hover {
+    background-color: #f4f4f4;
+    color: #666;
+}
+
+@media(max-width: 780px) {
+    .nav-container {
+        border: none;
+        float: none;
+        margin-top: 0px;
+    }
+
+    .nav > li {
+        width: 100%;
+    }
+}

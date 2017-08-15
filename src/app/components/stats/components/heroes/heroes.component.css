@@ -1,0 +1,62 @@
+.dropdown-content {
+    overflow: hidden;
+}
+
+.header {
+    border-top: solid 1px #666;
+    border-bottom: solid 1px #666;
+    text-align: center;
+    width: 100%;
+    padding: 15px;
+    font-size: 2.5em;
+    color: #666;
+    background-color: #eee;
+    cursor: pointer;
+}
+
+.hero-bar {
+    height: 75px;
+    margin: 5px 0px;
+    width: 100%;
+}
+
+.hero-img {
+    float: left;
+    height: 75px;
+    width: 75px;
+}
+
+.time-container {
+    position: relative;
+    float: left;
+    width: calc(100% - 75px);
+    height: 100%;
+    background-color: rgba(0, 0, 0, .05);
+}
+
+.hero-name, .hero-time {
+    position: absolute;
+    height: 100%;
+    font-size: 1.5em;
+    color: white;
+    text-shadow: -1px 0 #888, 0 1px #888, 1px 0 #888, 0 -1px #888;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 0 5px;
+    line-height: 75px;
+}
+
+.hero-name {
+    left: 0;
+}
+
+.hero-time {
+    right: 0;
+}
+
+.playtime-bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+}

@@ -1,0 +1,18 @@
+<div class="title">
+  <h1 class="text-primary">Reacommodater</h1>
+  <h5 class="text-muted">Overwatch Stat Tracking</h5>
+</div>
+<div class="img-header">
+  <img src="{{spray_src}}">
+  <button 
+    *ngIf="!loggedIn" 
+    class="btn btn-success"
+    (click)="login()">Login</button>
+  <button 
+    *ngIf="loggedIn" 
+    class="btn btn-success"
+    (click)="logout()">Logout</button>
+</div>
+<div class="sub-img">
+  <img src="http://www.goombastomp.com/wp-content/uploads/2016/11/overwatch.png">
+</div>

@@ -1,0 +1,44 @@
+h1 {
+    color: #666;
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 25px;
+}
+
+.map-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 150px;
+}
+
+.map-dropdown {
+    width: 175px;
+    font-size: 1em;
+    margin-bottom: 25px;
+}
+
+.graph-container {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+}
+
+.win-percentage {
+    text-align: center;
+    color: #AAA;
+    margin-bottom: 25px;
+}
+
+.map-graph-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.map-graph {
+    width: 55%;
+    height: auto;
+}

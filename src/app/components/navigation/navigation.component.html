@@ -1,0 +1,31 @@
+<div *ngIf="loggedIn" 
+     class="user-hello">Logged in as <strong>{{username}}</strong></div>
+<div *ngIf="loggedIn && currentSeason != -1"
+    class="user-hello season">Season <strong>{{currentSeason}}</strong></div>
+<div class="nav-container">
+  <ul class="nav nav-pills nav-stacked">
+    <li [routerLink]="['']" 
+        [routerLinkActive]="['bg-primary']"
+        [routerLinkActiveOptions]="{ exact: true }">Home</li>
+    <li *ngIf="loggedIn"
+        [routerLink]="['graphs']" 
+        [routerLinkActive]="['bg-primary']"
+        [routerLinkActiveOptions]="{ exact: true }">Graphs</li>
+    <li *ngIf="loggedIn"
+        [routerLink]="['matches']" 
+        [routerLinkActive]="['bg-primary']"
+        [routerLinkActiveOptions]="{ exact: true }">Matches</li>
+    <li *ngIf="loggedIn"
+        [routerLink]="['matches/new']" 
+        [routerLinkActive]="['bg-primary']"
+        [routerLinkActiveOptions]="{ exact: true }">Add Match</li>
+    <li *ngIf="loggedIn"
+        [routerLink]="['stats']" 
+        [routerLinkActive]="['bg-primary']"
+        [routerLinkActiveOptions]="{ exact: true }">Stats</li>
+    <li *ngIf="loggedIn"
+        [routerLink]="['settings']" 
+        [routerLinkActive]="['bg-primary']"
+        [routerLinkActiveOptions]="{ exact: true }">Settings</li>
+  </ul>
+</div>

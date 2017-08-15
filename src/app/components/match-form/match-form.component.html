@@ -1,0 +1,89 @@
+<div class="component-container">
+  <h1 class="title">{{title}}</h1>
+  <hr />
+  <div>
+    <form class="match-form" [formGroup]="form">
+      <div class="match-form-group">
+        <label>Map</label>
+        <select class="form-control" id="map" formControlName="map">
+          <option selected disabled>Select A Map</option>
+          <option>Dorado</option>
+          <option>Eichenwalde</option>
+          <option>Hanamura</option>
+          <option>Hollywood</option>
+          <option>Horizon Lunar Colony</option>
+          <option>Illios</option>
+          <option>King's Row</option>
+          <option>Lijiang Tower</option>
+          <option>Nepal</option>
+          <option>Numbani</option>
+          <option>Oasis</option>
+          <option>Route 66</option>
+          <option>Temple of Anubis</option>
+          <option>Volskaya Industries</option>
+          <option>Watchpoin: Gibraltar</option>
+        </select>
+      </div>
+      <div class="match-form-group">
+        <label>Outcome</label>
+        <select class="form-control" id="outcome" formControlName="outcome">
+          <option selected disabled>Select Outcome</option>
+          <option>Won</option>
+          <option>Draw</option>
+          <option>Lost</option>
+        </select>
+      </div>
+      <div class="match-form-group">
+        <label>Final SR</label>
+        <input class="form-control" type="number" placeholder="SR" id="player_sr" formControlName="player_sr">
+      </div>
+    </form>
+    <div class="match-form-group">
+        <label>Group Members</label>
+        <div class="clearfix"></div>
+        <input #memberIn 
+          class="form-control group-input" 
+          type="text" 
+          placeholder="Group Members">
+        <button
+          class="btn btn-success add-btn" 
+          [disabled]="group.length >= 5"
+          (click)="addMember(memberIn.value); memberIn.value = ''">Add</button>
+        <ul class="member-listing">
+          <li *ngFor="let player of group; let i = index">
+            <div class="group-member-box">
+              <span class="group-member-name">{{player}}</span>
+              <i 
+                (click)="deleteMember(i)"
+                class="fa fa-minus-circle delete-btn" 
+                aria-hidden="true"></i>
+            </div>
+          </li>
+        </ul>
+    </div>
+    <div class="clearfix"></div>
+    <div class="match-form-group">
+      <i title="Did a teammate leave the game?" 
+        class="fa fa-3x {{getClasses('leaver')}}" 
+        (click)="toggleModifier('leaver')"></i>
+      <i title="Was there some raging on your team?"
+        class="fa fa-3x {{getClasses('heated')}}" 
+        (click)="toggleModifier('heated')"></i>
+      <i title="Did your team communicate well?" 
+        class="fa fa-3x {{getClasses('communication')}}" 
+        (click)="toggleModifier('communication')"></i>
+    </div>
+    <div class="submit-container">
+      <button 
+        *ngIf="!edit"
+        (click)="addMatch()"
+        [disabled]="!form.valid"
+        class="btn">Add Match</button>
+      <button 
+        *ngIf="edit"
+        (click)="editMatch()"
+        [disabled]="!form.valid"
+        class="btn">Save Changes</button>
+    </div> 
+  </div>
+</div>

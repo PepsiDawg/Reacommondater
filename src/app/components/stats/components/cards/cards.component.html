@@ -1,0 +1,23 @@
+<div (click)="toggleState()" class="header">
+  Stats
+  <i 
+    *ngIf="!dropdown"
+    class="fa fa-chevron-down"></i>
+  <i 
+    *ngIf="dropdown"
+    class="fa fa-chevron-up"></i>
+</div>
+<div
+  [@cardState]='state'
+  class="dropdown-content">
+  <div class="card-group" *ngFor="let category of categories">
+    <div class="category-header">{{category.replace('_', ' ')}}</div>
+    <hr />
+    <div class="grid">
+      <div class="card" *ngFor="let card of stats[category]">
+        <div class="card-value">{{card.value}}</div>
+        <div class="card-title">{{card.title}}</div>
+      </div>
+    </div>
+  </div>
+</div>
